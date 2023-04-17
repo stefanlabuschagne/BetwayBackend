@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetwayBackend", "BetwayBackend\BetwayBackend.csproj", "{9B06F11C-D1AA-4E8C-B6DE-F854E15F95F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetwayBackend", "BetwayBackend\BetwayBackend.csproj", "{9B06F11C-D1AA-4E8C-B6DE-F854E15F95F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetwayTest", "BetwayTest\BetwayTest.csproj", "{7A21848A-A1CE-4574-B737-7DD2E9381E0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9B06F11C-D1AA-4E8C-B6DE-F854E15F95F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B06F11C-D1AA-4E8C-B6DE-F854E15F95F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B06F11C-D1AA-4E8C-B6DE-F854E15F95F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A21848A-A1CE-4574-B737-7DD2E9381E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A21848A-A1CE-4574-B737-7DD2E9381E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A21848A-A1CE-4574-B737-7DD2E9381E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A21848A-A1CE-4574-B737-7DD2E9381E0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
