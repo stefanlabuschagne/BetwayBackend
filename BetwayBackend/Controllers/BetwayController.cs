@@ -62,7 +62,5 @@ namespace BetwayBackend.Controllers
 
         }
 
-
-
     }
 }
