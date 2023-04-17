@@ -1,4 +1,4 @@
-﻿namespace BetwayBackend.Models
+﻿namespace BetwayBackend.Models.Requests
 {
     public class LoginRequest
     {

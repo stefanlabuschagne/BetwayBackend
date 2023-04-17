@@ -1,4 +1,6 @@
 ﻿using BetwayBackend.Models;
+using BetwayBackend.Models.Requests;
+using BetwayBackend.Models.Responses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,42 +11,58 @@ namespace BetwayBackend.Controllers
     public class BetwayController : ControllerBase
     {
 
-        [HttpPost(Name = "Login")]
+        [HttpPost("Login")]
         public ActionResult<LoginResponse> Post([FromBody] LoginRequest currentLoginRequest)
         {
 
             if (currentLoginRequest == null)
             {
-                return new LoginResponse()
-                {
-                    Status = "Fail",
-                    Message = "Invalid Payload"
-                };
+                return new BadRequestObjectResult
+                    ( new LoginResponse()
+                        {
+                            Status = "Fail",
+                            Message = "Invalid Payload"
+                        }
+                    );
             }
 
-            if ((currentLoginRequest.email == "harper.lee@gmail.com") && (currentLoginRequest.password == "Syntax-10"))
+            // Hardcoded validation :(
+            if ((currentLoginRequest.email.ToLower() == "harper.lee@gmail.com") && (currentLoginRequest.password == "Syntax-10"))
             {
-                return new LoginResponse()
-                {
-                    Status = "Success",
-                    Message = "Stefan"
-                };
+                return new OkObjectResult(new LoginResponse()
+                    {
+                        Status = "Success",
+                        Message = "Stefan"
+                    });
             }
             else 
             {
-                return new LoginResponse()
+                return new BadRequestObjectResult(new LoginResponse()
                 {
                     Status = "Fail",
-                    Message = "Invalid credentials"
-                };
+                    Message = "Invalid Credentials"
+                });
             }
         }
 
-        [HttpGet(Name = "AppSettings")]
-        public ActionResult<ApplicationSettingsGeneral> Get()
+        [HttpGet("Settings/App")]
+        public ActionResult<ApplicationSettingsGeneral> GetAppSettings()
         {
             
             return new OkObjectResult(new ApplicationSettingsGeneral());
+
         }
+
+
+        [HttpGet("Settings/CTALogin")]
+        public ActionResult<ApplicationSettingsCTALogin> GetCTALogin()
+        {
+
+            return new OkObjectResult(new ApplicationSettingsCTALogin());
+
+        }
+
+
+
     }
 }

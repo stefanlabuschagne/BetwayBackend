@@ -1,4 +1,4 @@
-﻿namespace BetwayBackend.Models
+﻿namespace BetwayBackend.Models.Responses
 {
     public class LoginResponse
     {

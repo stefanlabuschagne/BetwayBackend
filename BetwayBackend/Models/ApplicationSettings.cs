@@ -3,24 +3,25 @@
     public class ApplicationSettingsGeneral
     {
 
-        public static string[] BannerOptions = { "sports","live & real","casino","esports","vegas"};
+        public  string[] BannerOptions { get; set; } = { "sports","live & real","casino","esports","vegas"};
 
-        public static string Login = "Login";
+        public  string Login { get; set; } = "Login";
 
-        public static string SignUp = "Sign up";
+        public  string SignUp { get; set; } = "Sign up";
 
-        public static string[] FooterLines = { "SPORTS NEW CUSTOMER OFFER", "Get up to $10 in Free Bets", "Join Now" };
+        public  string[] FooterLines { get; set; } = { "SPORTS NEW CUSTOMER OFFER", "Get up to $10 in Free Bets", "Join Now" };
+
 
     }
 
-    public static class ApplicationSettingsCTALogin
+    public  class ApplicationSettingsCTALogin
     {
 
-        public static string[] HeaderText = { "Login", "New customer?", "Register here" };
+        public  string[] HeaderText { get; set; } = { "Login", "New customer?", "Register here" };
 
-        public static string[] FormFields = { "Username", "Password" };
+        public  string[] FormFields { get; set; } = { "Username", "Password" };
 
-        public static string[] FooterText = { "Login", "Forgot Username/Password" };
+        public  string[] FooterText { get; set; } = { "Login", "Forgot Username/Password" };
 
     }
 
