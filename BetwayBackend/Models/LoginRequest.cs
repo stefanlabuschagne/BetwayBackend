@@ -1,0 +1,11 @@
+﻿namespace BetwayBackend.Models
+{
+    public class LoginRequest
+    {
+
+        public string email { get; set; } // Username
+
+        public string password { get; set; }
+
+    }
+}
