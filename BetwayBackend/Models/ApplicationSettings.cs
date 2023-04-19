@@ -23,6 +23,8 @@
 
         public  string[] FooterText { get; set; } = { "Login", "Forgot Username/Password" };
 
+        public string[] WelcomeUser { get; set; } = { "Success", "Welcome", "Continue" };
+
     }
 
 }
