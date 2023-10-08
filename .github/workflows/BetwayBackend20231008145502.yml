@@ -11,7 +11,7 @@ env:
   AZURE_APIM_SERVICENAME: Daisy-9-API-mamagement-service
   AZURE_APIM_API_ID: BBackend
   AZURE_APIM_APPSERVICEURL: https://betwaybackend20231008145502.azurewebsites.net
-  SWASHBUCLE_ASPNET_CORE_CLI_PACKAGE_VERSION: 6.5.0
+  SWASHBUCLE_ASPNET_CORE_CLI_PACKAGE_VERSION: 5.6.3
   SWASHBUCKLE_DOTNET_CORE_VERSION: 3.1.x
   API_IMPORT_SPECIFICATION_PATH: BetwayBackend\publish\swagger.json
   API_IMPORT_DLL: BetwayBackend\bin\Release\net6.0\BetwayBackend.dll
@@ -64,7 +64,7 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.BetwayBackend20231008145502_54FA }}
+        publish-profile: ${{ secrets.BetwayBackend20231008145502_E24C }}
     - name: Azure Login
       uses: azure/login@v1
       with:
