@@ -12,7 +12,6 @@ namespace BetwayBackend.Controllers
 	[ApiController]
 	public class BetwayController : ControllerBase
 	{
-
 		[HttpPost("Login")]
 		public ActionResult<LoginResponse> Post([FromBody] LoginRequest currentLoginRequest)
 		{
