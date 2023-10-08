@@ -28,7 +28,7 @@ namespace BetwayBackend.Controllers
 			}
 
 			// Hardcoded validation :(
-			if ((currentLoginRequest.email.ToLower() == "harper.lee@gmail.com") && (currentLoginRequest.password == "Syntax-10"))
+			if ((currentLoginRequest.Email.ToLower() == "harper.lee@gmail.com") && (currentLoginRequest.Password == "Syntax-10"))
 			{
 				return new OkObjectResult(new LoginResponse()
 				{

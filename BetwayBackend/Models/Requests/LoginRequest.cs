@@ -3,9 +3,9 @@
 	public class LoginRequest
 	{
 
-		public string email { get; set; } // Username
+		public string Email { get; set; } // Username
 
-		public string password { get; set; }
+		public string Password { get; set; }
 
 	}
 }
