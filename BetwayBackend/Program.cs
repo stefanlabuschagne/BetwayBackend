@@ -1,8 +1,8 @@
-using BetwayBackend.Models.Players;
+using BetwayBackend.Service.Players;
 
 namespace BetwayBackend
 {
-	public class Program
+    public class Program
 	{
 		public static void Main(string[] args)
 		{

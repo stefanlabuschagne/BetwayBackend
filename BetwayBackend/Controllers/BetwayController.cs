@@ -1,15 +1,15 @@
 ﻿using BetwayBackend.Models;
-using BetwayBackend.Models.Players;
 using BetwayBackend.Models.Requests;
 using BetwayBackend.Models.Responses;
+using BetwayBackend.Service.Players;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BetwayBackend.Controllers
 {
-	/// <summary>
-	///
-	/// </summary>
-	[Route("api/[controller]")]
+    /// <summary>
+    ///
+    /// </summary>
+    [Route("api/[controller]")]
 	[ApiController]
 	public class BetwayController : ControllerBase
 	{
