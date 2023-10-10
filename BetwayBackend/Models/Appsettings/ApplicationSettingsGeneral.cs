@@ -2,12 +2,12 @@
 {
     public class ApplicationSettingsGeneral
     {
-        public string[] BannerOptions { get; set; } = { "sports", "live & real", "casino", "esports", "vegas" };
+        public string[] BannerOptions { get; set; }
 
-        public string Login { get; set; } = "Login";
+        public string Login { get; set; }
 
-        public string SignUp { get; set; } = "Sign up";
+        public string SignUp { get; set; }
 
-        public string[] FooterLines { get; set; } = { "SPORTS NEW CUSTOMER OFFER", "Get up to $10 in Free Bets", "Join Now" };
+        public string[] FooterLines { get; set; }
     }
 }

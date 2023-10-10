@@ -12,7 +12,7 @@ namespace BetwayBackend.Controllers
 	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
-	public class BetwayController : ControllerBase
+	public class BetwayController : ControllerBase, IBetwayController
 	{
 		private IPlayerService _playerService;
 		private ILogger _logger;
@@ -30,7 +30,6 @@ namespace BetwayBackend.Controllers
 		public ActionResult<LoginResponse> Post([FromBody] LoginRequest currentLoginRequest)
 		{
 			if (currentLoginRequest == null)
-			{
 				return new BadRequestObjectResult
 					(new LoginResponse()
 						{
@@ -38,7 +37,6 @@ namespace BetwayBackend.Controllers
 							Message = "Invalid Payload"
 						}
 					);
-			}
 
 			var validPlayer = _playerService.GetPlayer(currentLoginRequest.Email, currentLoginRequest.Password);
 
