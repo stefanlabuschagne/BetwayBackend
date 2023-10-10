@@ -3,7 +3,7 @@
 	/// <summary>
 	///
 	/// </summary>
-	public class LoginResponse
+	public class LoginResponse : ILoginResponse
 	{
 		public string Status { get; set; } // Sucsess / Failed
 

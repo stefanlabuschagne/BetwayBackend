@@ -1,27 +1,29 @@
-﻿using BetwayBackend.Models;
+﻿using BetwayBackend.Models.Appsettings;
 using BetwayBackend.Models.Requests;
 using BetwayBackend.Models.Responses;
+using BetwayBackend.Service.AppSettings;
 using BetwayBackend.Service.Players;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BetwayBackend.Controllers
 {
-  /// <summary>
-  ///
-  /// </summary>
+	/// <summary>
+	///
+	/// </summary>
 	[Route("api/[controller]")]
 	[ApiController]
 	public class BetwayController : ControllerBase
 	{
-
 		private IPlayerService _playerService;
 		private ILogger _logger;
+		private IAppsettingsService _appsettingsService;
 
 		// Controller Constructor
-		public BetwayController(ILogger<BetwayController> daLogger, IPlayerService daPlayerService)
+		public BetwayController(ILogger<BetwayController> daLogger, IPlayerService daPlayerService, IAppsettingsService daAppSettings)
 		{
 			_logger = daLogger;
 			_playerService = daPlayerService;
+			_appsettingsService = daAppSettings;
 		}
 
 		[HttpPost("Login")]
@@ -42,33 +44,33 @@ namespace BetwayBackend.Controllers
 
 			// Validation against the Injected Details of a valid user.
 			if (validPlayer == null)
-			{
 				return new OkObjectResult(new LoginResponse()
 				{
 					Status = "Success",
 					Message = validPlayer.Name
 				});
-			}
 			else
-			{
 				return new BadRequestObjectResult(new LoginResponse()
 				{
 					Status = "Fail",
 					Message = "Invalid Credentials"
 				});
-			}
 		}
 
 		[HttpGet("Settings/App")]
 		public ActionResult<ApplicationSettingsGeneral> GetAppSettings()
 		{
-			return new OkObjectResult(new ApplicationSettingsGeneral());
+			return new OkObjectResult(
+				this._appsettingsService.GetGeneralAppSettings()
+				);
 		}
 
 		[HttpGet("Settings/CTALogin")]
 		public ActionResult<ApplicationSettingsCTALogin> GetCTALogin()
 		{
-			return new OkObjectResult(new ApplicationSettingsCTALogin());
+			return new OkObjectResult(
+				this._appsettingsService.GetCTALoginAppsettings()
+				);
 		}
 	}
 }
