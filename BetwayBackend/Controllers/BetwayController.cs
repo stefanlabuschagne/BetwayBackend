@@ -6,22 +6,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BetwayBackend.Controllers
 {
-    /// <summary>
-    ///
-    /// </summary>
-    [Route("api/[controller]")]
+  /// <summary>
+  ///
+  /// </summary>
+	[Route("api/[controller]")]
 	[ApiController]
 	public class BetwayController : ControllerBase
 	{
 
-		private IPlayer _validPlayer;
+		private IPlayerService _playerService;
 		private ILogger _logger;
 
 		// Controller Constructor
-		public BetwayController(ILogger<BetwayController> daLogger, IPlayer daPlayer)
+		public BetwayController(ILogger<BetwayController> daLogger, IPlayerService daPlayerService)
 		{
 			_logger = daLogger;
-			_validPlayer = daPlayer;
+			_playerService = daPlayerService;
 		}
 
 		[HttpPost("Login")]
@@ -38,13 +38,15 @@ namespace BetwayBackend.Controllers
 					);
 			}
 
+			var validPlayer = _playerService.GetPlayer(currentLoginRequest.Email, currentLoginRequest.Password);
+
 			// Validation against the Injected Details of a valid user.
-			if ((currentLoginRequest.Email.ToLower() == _validPlayer.Email.ToLower()) && (currentLoginRequest.Password == _validPlayer.Password))
+			if (validPlayer == null)
 			{
 				return new OkObjectResult(new LoginResponse()
 				{
 					Status = "Success",
-					Message = _validPlayer.Name
+					Message = validPlayer.Name
 				});
 			}
 			else
