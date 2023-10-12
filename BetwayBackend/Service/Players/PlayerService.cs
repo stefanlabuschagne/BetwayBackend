@@ -37,14 +37,8 @@ namespace BetwayBackend.Service.Players
 			};
 		}
 
-		public Player GetPlayer(string email, string password)
-		{
-			return _players.FirstOrDefault(x => x.Email == email && x.Password == password);
-		}
+		public Player GetPlayer(string email, string password) => _players.FirstOrDefault(x => x.Email == email && x.Password == password);
 
-		public List<Player> GetAllPlayers()
-		{
-			return _players;
-		}
+		public List<Player> GetAllPlayers() => _players;
 	}
 }
