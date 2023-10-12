@@ -10,7 +10,7 @@ namespace BetwayBackend
 		{
 			var builder = WebApplication.CreateBuilder(args);
 			builder.Services.AddSingleton<IPlayerService, PlayerService>(); // DI for Valid Player Credentials
-			builder.Services.AddSingleton<IAppsettingsService, AppsettingsService>();
+			builder.Services.AddSingleton<IAppsettingsService, AppsettingsService>(); // DI for Different Appsettings
 
 			// Add services to the container.
 			builder.Services.AddControllers();

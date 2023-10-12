@@ -5,7 +5,6 @@ namespace BetwayBackend.Service.Appsettings
 {
 	public class AppsettingsServiceTest : IAppsettingsService
 	{
-
 		private ApplicationSettingsCTALogin _cTALoginAppsettings;
 		private ApplicationSettingsGeneral _generalAppSettings;
 
