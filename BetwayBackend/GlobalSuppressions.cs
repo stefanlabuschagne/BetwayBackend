@@ -115,3 +115,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:BetwayBackend.Controllers.IBetwayController")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:BetwayBackend.Models.Responses.ILoginResponse")]
 [assembly: SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1027:Use tabs correctly", Justification = "<Pending>", Scope = "type", Target = "~T:BetwayBackend.Service.Appsettings.AppsettingsServiceTest")]
+[assembly: SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1413:Use trailing comma in multi-line initializers", Justification = "<Pending>", Scope = "member", Target = "~M:BetwayBackend.Service.Players.PlayerService.#ctor")]

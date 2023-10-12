@@ -4,8 +4,8 @@ namespace BetwayBackend.Service.Players
 {
 	public interface IPlayerService
 	{
-		public Player GetPlayer(string name, string email);
+		List<Player> GetAllPlayers();
 
-		public List<Player> GetAllPlayers();
+		Player GetPlayer(string email, string password);
 	}
 }

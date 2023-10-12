@@ -7,37 +7,44 @@ namespace BetwayBackend.Service.Players
 	/// </summary>
 	///
 	public class PlayerService : IPlayerService
+	// : IPlayerService
 	{
-		private List<Player> _players = new List<Player>()
+		private List<Player> _players;
+
+		// constructor
+		public PlayerService()
 		{
-			new Player()
+			_players = new List<Player>()
 			{
-				Name = "Stefan",
-				Email = "larper.lee@gmail.com",
-				Password = "Syntax10"
-			},
-			new Player()
-			{
-				Name = "Harper",
-				Email = "Harper.Lee@gmail.com",
-				Password = "Syntax20"
-			},
-			new Player()
-			{
-				Name = "Susan",
-				Email = "Susan.Lee@gmail.com",
-				Password = "Syntax100"
-			}
-		};
+				new Player()
+				{
+					Name = "Stefan",
+					Email = "larper.lee@gmail.com",
+					Password = "Syntax10",
+				},
+				new Player()
+				{
+					Name = "Harper",
+					Email = "Harper.Lee@gmail.com",
+					Password = "Syntax20",
+				},
+				new Player()
+				{
+					Name = "Susan",
+					Email = "Susan.Lee@gmail.com",
+					Password = "Syntax100",
+				}
+			};
+		}
 
-		/// <summary>
-		/// Return a Valid User
-		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="email"></param>
-		/// <returns></returns>
-		public Player GetPlayer(string email, string password) => _players.FirstOrDefault(x => x.Email == email && x.Password == password);
+		public Player GetPlayer(string email, string password)
+		{
+			return _players.FirstOrDefault(x => x.Email == email && x.Password == password);
+		}
 
-		public List<Player> GetAllPlayers() => _players;
+		public List<Player> GetAllPlayers()
+		{
+			return _players;
+		}
 	}
 }
