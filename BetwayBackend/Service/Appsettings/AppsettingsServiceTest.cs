@@ -3,37 +3,35 @@ using BetwayBackend.Service.AppSettings;
 
 namespace BetwayBackend.Service.Appsettings
 {
-	public class AppsettingsService : IAppsettingsService
+	public class AppsettingsServiceTest : IAppsettingsService
 	{
 
 		private ApplicationSettingsCTALogin _cTALoginAppsettings;
 		private ApplicationSettingsGeneral _generalAppSettings;
 
-		public AppsettingsService()
+		public AppsettingsServiceTest()
 		{
-
 			_cTALoginAppsettings = new ApplicationSettingsCTALogin
 			{
-				HeaderText = new string[] { "Login", "New customer?", "Register here" },
+				HeaderText = new string[] { "TESTLogin", "TESTNew customer?", "TESTRegister here" },
 
-				FormFields = new string[] { "Username", "Password" },
+				FormFields = new string[] { "TESTUsername", "TESTPassword" },
 
-				FooterText = new string[] { "Login", "Forgot Username/Password" },
+				FooterText = new string[] { "TESTLogin", "TESTForgot Username/Password" },
 
-				WelcomeUser = new string[] { "Success", "Welcome", "Continue" },
+				WelcomeUser = new string[] { "TESTSuccess", "TESTWelcome", "TESTContinue" },
 			};
 
 			_generalAppSettings = new ApplicationSettingsGeneral()
 			{
-				BannerOptions = new string[] { "sports", "live & real", "casino", "esports", "vegas" },
+				BannerOptions = new string[] { "TESTsports", "TESTlive & real", "TESTcasino", "TESTesports", "TESTvegas" },
 
 				Login = "Login",
 
 				SignUp = "Sign up",
 
-				FooterLines = new string[] { "SPORTS NEW CUSTOMER OFFER", "Get up to $10 in Free Bets", "Join Now" },
+				FooterLines = new string[] { "TESTSPORTS NEW CUSTOMER OFFER", "TESTGet up to $10 in Free Bets", "TESTJoin Now" },
 			};
-
 		}
 
 		public ApplicationSettingsCTALogin CTALoginAppsettings

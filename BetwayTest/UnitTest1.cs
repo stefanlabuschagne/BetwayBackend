@@ -1,7 +1,11 @@
 using BetwayBackend.Controllers;
+using BetwayBackend.Models.Appsettings;
+using BetwayBackend.Models.Requests;
+using BetwayBackend.Models.Responses;
 using BetwayBackend.Service.Appsettings;
 using BetwayBackend.Service.AppSettings;
 using BetwayBackend.Service.Players;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace BetwayTest
@@ -19,29 +23,29 @@ namespace BetwayTest
 			int result = a + b;
 
 			// Assert
-			Assert.Equal(5, result);
+			Assert.Equal(6, result);
 		}
 
-		public void GetAppSettings()
+		[Fact]
+		public void Test2()
 		{
 			// Arrange
 			IPlayerService  PS = new PlayerService();  // List of Valid Players and passwords.
-			IAppsettingsService appsettings = new AppsettingsService();
-		
-			//ILogger daLogger = new Logger();
+			IAppsettingsService appsettings = new AppsettingsServiceTest();  // Service Returning Test Data for 
 
-			//var bc = new BetwayController(daLogger, PS, appsettings);
+			var bc = new BetwayController(null, PS, appsettings);
 
-			// var bcAppsettings = bc.GetAppSettings();
+			var loginRequest = new LoginRequest()
+			{
+				Email = "Susan.Lee@gmail.com",
+				Password = "Syntax100",
+			};
 
 			// Act
-			int result = 5;
+			var Response = bc.Post(loginRequest);
 
 			// Assert
-			Assert.Equal(5, result);
+			Assert.Equal("Success", Response.ToString());
 		}
-
-
-
 	}
 }

@@ -42,16 +42,16 @@ namespace BetwayBackend.Controllers
 
 			// Validation against the Injected Details of a valid user.
 			if (validPlayer == null)
-				return new OkObjectResult(new LoginResponse()
-				{
-					Status = "Success",
-					Message = validPlayer.Name
-				});
-			else
 				return new BadRequestObjectResult(new LoginResponse()
 				{
 					Status = "Fail",
 					Message = "Invalid Credentials"
+				});
+			else
+				return new OkObjectResult(new LoginResponse()
+				{
+					Status = "Success",
+					Message = validPlayer.Name
 				});
 		}
 
@@ -59,7 +59,7 @@ namespace BetwayBackend.Controllers
 		public ActionResult<ApplicationSettingsGeneral> GetAppSettings()
 		{
 			return new OkObjectResult(
-				this._appsettingsService.GetGeneralAppSettings()
+				this._appsettingsService.GeneralAppSettings
 				);
 		}
 
@@ -67,7 +67,7 @@ namespace BetwayBackend.Controllers
 		public ActionResult<ApplicationSettingsCTALogin> GetCTALogin()
 		{
 			return new OkObjectResult(
-				this._appsettingsService.GetCTALoginAppsettings()
+				this._appsettingsService.CTALoginAppsettings
 				);
 		}
 	}
